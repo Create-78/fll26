@@ -1,0 +1,165 @@
+from pybricks.hubs import PrimeHub
+from pybricks.pupdevices import Motor, ColorSensor, UltrasonicSensor, ForceSensor
+from pybricks.parameters import Button, Color, Direction, Axis, Port, Side, Stop
+from pybricks.robotics import DriveBase
+from pybricks.tools import wait, StopWatch, hub_menu, multitask, run_task
+
+hub = PrimeHub()
+
+Left_Motor = Motor(Port.D,Direction.CLOCKWISE) #create an object for left drive motor
+Right_Motor = Motor(Port.C,Direction.COUNTERCLOCKWISE) #create an object for right drive motor
+Left_Arm_Motor = Motor(Port.B,Direction.COUNTERCLOCKWISE) #create an object for left movement arm motor
+Right_Arm_Motor = Motor(Port.A,Direction.CLOCKWISE) #create an object for right movement arm motor
+
+Robot_wheel_diameter = 88 #set the diameter of robot wheel: 50.2 for green znap wheels, 56 for small blue wheels, and 88 for large blue wheels
+Robot_axle_track = 110 #variable to set distance between robot wheels
+
+Robot = DriveBase(Left_Motor,Right_Motor,Robot_wheel_diameter,Robot_axle_track) #create object for robot for movement
+
+#method to use the gyro scope for movement
+Robot.use_gyro(True)
+
+############## Example robot instructions below ######################
+
+#Robot.turn(51)# to turn the robot just update the turn angle (using gyroscope is automatic)
+#Robot.straight(260)#drive straight distance is in millimeters measure in cm and add a 0 (using gyroscope is automatic)
+#Right_Arm_Motor.run_angle(speed: 700, rotation_angle: 1200)#Move the right arm motor with speed 700 and 1200 degrees of rotation
+#Left_Arm_Motor.run_angle(speed: 700, rotation_angle: 1200)#Move the left arm motor with speed 700 and 1200 degrees of rotation
+
+############# End of examples ######################################
+
+#name run & document starting position in home base.
+def run_zero():
+  Robot.settings(straight_speed=200,straight_acceleration=500, turn_rate=150) #set drive speed, acceleration speed, and turn speed
+  Robot.straight(410) #drive straight (using gyroscope is automatic)
+  Left_Arm_Motor.run_angle(350,120) #control arm motors individually
+  Robot.turn(-30) #turn the robot (using gyroscope is automatic)
+  #Right_Arm_Motor.run_angle(700,1200) #control arm motors individually
+  Left_Arm_Motor.run_angle(350,-30)
+  Left_Arm_Motor.run_angle(350, 20)
+  Robot.turn(30) #turn the robot (using gyroscope is automatic)
+  Left_Arm_Motor.run_angle(360, 20)
+  Robot.straight (260)
+  Left_Arm_Motor.run_angle (3000,-15)
+  Robot.straight (-50)
+  Robot.turn (-80)
+  Left_Arm_Motor.run_angle (-350,100)
+  Robot.straight (350)
+  Robot.turn (-60)
+  Robot.straight (-300)
+  Robot.straight (100)
+  Robot.straight (-200)
+  Robot.turn (100)
+  Robot.straight (-1000)
+  
+#This is for Biocentric Architecture(as of now, the skylight is unfinished. Note on attachment system; please create all other attachments this way. The one where the pins are on the LEFT is this.)
+def run_one():
+  Robot.settings(straight_speed=200,straight_acceleration=500, turn_rate=150) #set drive speed, acceleration speed, and turn speed
+  Left_Arm_Motor.run_angle(250,105)
+  Robot.straight(400)#drive straight (using gyroscope is automatic)
+  Robot.straight (-30)
+  Left_Arm_Motor.run_angle(250,-125)#control arm motors individually
+  Robot.straight(-390)
+  Left_Arm_Motor.run_angle(30,105) #this line was not indented so it was running before the main block
+ 
+#name run & document starting position in home base
+def run_two():
+  Robot.settings(straight_speed=400,straight_acceleration=500, turn_rate=150) #set drive speed, acceleration speed, and turn speed
+  #Robot.straight(280)
+  Robot.turn(51)#turn the robot (using gyroscope is automatic)
+  Robot.straight(260)#drive straight (using gyroscope is automatic)
+  Right_Arm_Motor.run_angle(700,1200)#control arm motors individually
+  Robot.straight(1,Stop.BRAKE)#stop the code to exit the function
+
+#name run & document starting position in home base
+def run_three():
+  Robot.settings(straight_speed=400,straight_acceleration=500, turn_rate=150) #set drive speed, acceleration speed, and turn speed
+  Robot.turn(51)#turn the robot (using gyroscope is automatic)
+  Robot.straight(260)#drive straight (using gyroscope is automatic)
+  Right_Arm_Motor.run_angle(700,1200)#control arm motors individually
+  Robot.straight(1,Stop.BRAKE)#stop the code to exit the function
+
+#name run & document starting position in home base
+def run_four():
+  Robot.settings(straight_speed=400,straight_acceleration=500, turn_rate=150) #set drive speed, acceleration speed, and turn speed
+  Robot.turn(51)#turn the robot (using gyroscope is automatic)
+  Robot.straight(260)#drive straight (using gyroscope is automatic)
+  Right_Arm_Motor.run_angle(700,1200)#control arm motors individually
+  Robot.straight(1,Stop.BRAKE)#stop the code to exit the function
+
+#name run & document starting position in home base
+def run_five():
+  Robot.settings(straight_speed=400,straight_acceleration=500, turn_rate=150) #set drive speed, acceleration speed, and turn speed
+  Robot.turn(51)#turn the robot (using gyroscope is automatic)
+  Robot.straight(260)#drive straight (using gyroscope is automatic)
+  Right_Arm_Motor.run_angle(700,1200)#control arm motors individually
+  Robot.straight(1,Stop.BRAKE)#stop the code to exit the function
+
+#name run & document starting position in home base
+def run_six():
+  Robot.settings(straight_speed=400,straight_acceleration=500, turn_rate=150) #set drive speed, acceleration speed, and turn speed
+  Robot.turn(51)#turn the robot (using gyroscope is automatic)
+  Robot.straight(260)#drive straight (using gyroscope is automatic)
+  Right_Arm_Motor.run_angle(700,1200)#control arm motors individually
+  Robot.straight(1,Stop.BRAKE)#stop the code to exit the function
+
+#name run & document starting position in home base
+def run_seven(): 
+  Robot.settings(straight_speed=400,straight_acceleration=500, turn_rate=150) #set drive speed, acceleration speed, and turn speed
+  Robot.turn(51)#turn the robot (using gyroscope is automatic)
+  Robot.straight(260)#drive straight (using gyroscope is automatic)
+  Right_Arm_Motor.run_angle(700,1200)#control arm motors individually
+  Robot.straight(1,Stop.BRAKE)#stop the code to exit the function
+
+#name run & document starting position in home base
+def run_eight():
+  Robot.settings(straight_speed=400,straight_acceleration=500, turn_rate=150) #set drive speed, acceleration speed, and turn speed
+  Robot.turn(51)#turn the robot (using gyroscope is automatic)
+  Robot.straight(260)#drive straight (using gyroscope is automatic)
+  Right_Arm_Motor.run_angle(700,1200)#control arm motors individually
+  Robot.straight(1,Stop.BRAKE)#stop the code to exit the function
+  #name run & document starting position in home base
+
+def run_nine():
+  Robot.settings(straight_speed=400,straight_acceleration=500, turn_rate=150) #set drive speed, acceleration speed, and turn speed
+  Robot.turn(51)#turn the robot (using gyroscope is automatic)
+  Robot.straight(260)#drive straight (using gyroscope is automatic)
+  Right_Arm_Motor.run_angle(700,1200)#control arm motors individually
+  Robot.straight(1,Stop.BRAKE)#stop the code to exit the function
+
+  
+ ###########################CODE STARTS##########################
+
+def main():
+
+    programs = {
+            "0": run_zero,
+            "1": run_one,
+            "2": run_two,
+            "3": run_three,
+            "4": run_four,
+            "5": run_five,
+            "6": run_six,
+            "7": run_seven,
+            "8": run_eight,
+            "9": run_nine
+        }
+
+    while True:
+        choice = hub_menu(
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9"
+        )
+
+        programs[choice]()
+
+
+main()
